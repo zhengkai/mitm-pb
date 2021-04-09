@@ -1,0 +1,12 @@
+syntax = "proto3";
+option go_package = ".;pb";
+package pb;
+
+message Inventory {
+	repeated InventoryRow list = 1;
+}
+
+message InventoryRow {
+	uint32 itemID = 1;
+	uint32 num = 2;
+}

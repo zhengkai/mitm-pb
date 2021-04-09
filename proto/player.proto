@@ -1,0 +1,29 @@
+syntax = "proto3";
+option go_package = ".;pb";
+package pb;
+
+import "inventory.proto";
+
+message Player {
+	uint32 ID = 1;
+	Class.Enum class = 2;
+	uint32 level = 3;
+	fixed32 tsCreate = 4;
+	fixed32 tsActive = 5;
+	Inventory inventory = 6;
+	uint32 exp = 7;
+}
+
+message Class {
+	enum Enum {
+		Newbie = 0;
+		Druid = 1;
+		Hunter = 2;
+		Mage = 3;
+		Paladin = 4;
+		Priest = 5;
+		Rogue = 6;
+		Warrior = 7;
+		Warlock = 8;
+	}
+}
